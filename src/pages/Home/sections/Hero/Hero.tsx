@@ -6,7 +6,6 @@ import { Button, Typography, Stack, Box } from "@mui/material"
 import Grid from "@mui/material/Grid"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import DownloadIcon from "@mui/icons-material/Download"
-import MailOutlineIcon from "@mui/icons-material/MailOutline"
 import { AnimatedBackground } from "../../../../components/AnimatedBackground"
 
 function Hero() {
@@ -137,16 +136,27 @@ function Hero() {
                                     >
                                         Download CV
                                     </Button>
-                                    <Button
-                                        variant="outlined"
-                                        color="secondary"
-                                        size="large"
-                                        startIcon={<MailOutlineIcon />}
-                                        fullWidth={isSmallScreen}
-                                        component="a"
-                                        href="https://wa.me/5579996541410"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                <Button
+                                    variant="outlined"
+                                    color="secondary"
+                                    size="large"
+                                    startIcon={
+                                        <Box
+                                            sx={{
+                                                width: 18,
+                                                height: 18,
+                                                backgroundColor: "currentColor",
+                                                mask: "url(/cv/whatsapp-logo-variant-svgrepo-com.svg) no-repeat center / contain",
+                                                WebkitMask: "url(/cv/whatsapp-logo-variant-svgrepo-com.svg) no-repeat center / contain",
+                                            }}
+                                            aria-hidden
+                                        />
+                                    }
+                                    fullWidth={isSmallScreen}
+                                    component="a"
+                                    href="https://wa.me/5579996541410"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     >
                                         Fale comigo
                                     </Button>
