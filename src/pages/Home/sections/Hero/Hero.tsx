@@ -76,6 +76,7 @@ function Hero() {
                     pointerEvents: "none",
                     overflow: "hidden",
                     zIndex: 0,
+                    
                 }}
             >
                 <AnimatedBackground />
@@ -118,7 +119,7 @@ function Hero() {
                                         fontWeight: 400,
                                     }}
                                 >
-                                    Desenvolvedora Web
+                                    Analista de Sistemas
                                 </Typography>
 
                                 <ButtonRow

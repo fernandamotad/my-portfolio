@@ -230,7 +230,7 @@ function NavBar() {
 
                     "&:hover": {
                       color: theme.palette.common.white,
-                      backgroundColor: alpha(theme.palette.primary.main, 0.12),
+                      backgroundColor: alpha(theme.palette.primary.main, 0.35),
                     },
 
                     "&:focus-visible": {
@@ -241,7 +241,7 @@ function NavBar() {
                     },
 
                     ...(isActive && {
-                      backgroundColor: alpha(theme.palette.primary.main, 0.18),
+                      backgroundColor: alpha(theme.palette.primary.main, 0.35),
                       boxShadow: `inset 0 0 0 1px ${alpha(
                         theme.palette.primary.main,
                         0.35
@@ -309,22 +309,47 @@ function NavBar() {
                 const isActive = activeId === item.id
 
                 return (
-                  <MenuItem
-                    key={item.id}
-                    onClick={handleNav(item.href)}
-                    sx={{
-                      py: 1.25,
-                      fontWeight: 650,
-                      color: isActive
-                        ? theme.palette.primary.main
-                        : theme.palette.text.primary,
-                      backgroundColor: isActive
-                        ? alpha(theme.palette.primary.main, 0.12)
-                        : "transparent",
-                    }}
-                  >
-                    {item.label}
-                  </MenuItem>
+                <MenuItem
+                key={item.id}
+                selected={isActive}
+                onClick={handleNav(item.href)}
+                sx={{
+                    position: "relative",
+                    py: 1.25,
+                    px: 2,
+                    borderRadius: 2,
+                    fontWeight: 650,
+                    color: alpha(theme.palette.text.primary, 0.88),
+
+                    "&:hover": {
+                    backgroundColor: alpha(theme.palette.primary.main, 0.14),
+                    color: theme.palette.common.white,
+                    },
+
+                    "&.Mui-selected": {
+                    backgroundColor: alpha(theme.palette.primary.main, 0.22),
+                    color: theme.palette.common.white,
+                    },
+
+                    "&.Mui-selected:hover": {
+                    backgroundColor: alpha(theme.palette.primary.main, 0.28),
+                    color: theme.palette.common.white,
+                    },
+
+                    "&.Mui-selected::before": {
+                    content: '""',
+                    position: "absolute",
+                    left: 0,
+                    top: 8,
+                    bottom: 8,
+                    width: 4,
+                    borderRadius: 999,
+                    backgroundColor: theme.palette.primary.main,
+                    },
+                }}
+                >
+                {item.label}
+                </MenuItem>
                 )
               })}
             </Menu>

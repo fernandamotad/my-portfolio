@@ -26,12 +26,16 @@ let theme = createTheme({
   typography: {
     fontFamily: "Helvetica Neue, Arial, sans-serif",
     h1: {
-        color: '#ffffffff',
-  }, 
+      color: '#ffffff',
+      fontWeight: 700,
+      letterSpacing: '-0.02em',
+    }, 
     h2: {
-        color: '#ffffff',
-  }, 
-},
+      color: '#ffffff',
+      fontWeight: 600,
+      letterSpacing: '-0.01em',
+    }, 
+  },
      
   components: {
     MuiButton: {
