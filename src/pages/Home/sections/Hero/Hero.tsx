@@ -1,44 +1,43 @@
 import styled from "@emotion/styled"
 import Avatar from "../../../../assets/images/foto.jpeg"
+import Container from "@mui/material/Container"
+import { useTheme } from "@mui/material/styles"
+import { Button, Typography, Stack } from "@mui/material"
 import Grid from "@mui/material/Grid"
-import Container from '@mui/material/Container'
-import { useTheme } from '@mui/material/styles'
-import { Button, Typography } from "@mui/material"
-import DownloadIcon from '@mui/icons-material/Download';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import useMediaQuery from "@mui/material/useMediaQuery"
+import DownloadIcon from "@mui/icons-material/Download"
+import MailOutlineIcon from "@mui/icons-material/MailOutline"
 
 function Hero() {
     const theme = useTheme()
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"))
 
     const StyledHero = styled("div")({
         backgroundColor: "black",
-        height: "100vh",
+        minHeight: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
-        padding: "0 20px",
-        /*Mobile*/
+        boxSizing: "border-box",
+        padding: "96px 20px 64px",
         [theme.breakpoints.down("md")]: {
-            height: "auto",
-            display: "block",
-            paddingTop: "80px",
-            paddingBottom: "40px",
-        }
+            minHeight: "auto",
+            padding: "104px 16px 56px",
+        },
     })
 
     const StyledImage = styled("img")({
-        width: "100%",              // ocupa a largura máxima permitida pelo Grid
-        maxWidth: "260px",          // limita para não ficar gigante em telas grandes
-        display: "block",           // permite centralizar
-        margin: "0 auto",           // centraliza a imagem
+        width: "100%",
+        maxWidth: "280px",
+        display: "block",
+        margin: "0 auto",
         borderRadius: "50%",
-        border: `1px solid ${theme.palette.primary.contrastText}`,
-        /*Mobile*/
+        border: `2px solid ${theme.palette.primary.contrastText}`,
+        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.35)",
         [theme.breakpoints.down("md")]: {
-            width: "100%",
             maxWidth: "220px",
-        }
+        },
     })
 
     const StyledText = styled("div")({
@@ -46,58 +45,94 @@ function Hero() {
         textAlign: "left",
         padding: "0 1rem",
         width: "100%",
-        /*Mobile*/
+        maxWidth: "800px",
         [theme.breakpoints.down("md")]: {
             textAlign: "center",
-            padding: "0 0.5rem",
-            marginTop: "1rem",
+            padding: "0",
+            marginTop: "1.5rem",
+            marginInline: "auto",
         },
     })
 
-    const StyledContent = styled("div")({
-
+    const ButtonRow = styled(Stack)({
+        marginTop: "28px",
+        gap: "16px",
+        alignItems: "flex-start",
+        [theme.breakpoints.down("md")]: {
+            alignItems: "stretch",
+        },
     })
 
     return (
-        
         <StyledHero>
-            <StyledContent>
-
-                <Container maxWidth="lg">
-                    <Grid container spacing={2}>
-                    <Grid size={{xs: 12, md: 4}}>
+            <Container
+                maxWidth={false}
+                sx={{ display: "flex", justifyContent: "center", px: { xs: 2, md: 3 } }}
+            >
+                <Grid
+                    container
+                    columns={{ xs: 12, md: 12 }}
+                    spacing={{ xs: 3, md: 6 }}
+                    alignItems="center"
+                    justifyContent="center"
+                    sx={{ width: "100%", maxWidth: 1100, margin: "0 auto", justifyItems: "center" }}
+                >
+                    <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
                         <StyledImage src={Avatar} alt="avatar" />
                     </Grid>
-                    <Grid size={{xs: 12, md: 8}}>
-
+                    <Grid size={{ xs: 12, md: 5 }}>
                         <StyledText>
-                        <Typography variant="h1" align={"center"} sx={{ whiteSpace: "nowrap" }}>
+                            <Typography
+                                variant="h1"
+                                sx={{
+                                    fontSize: { xs: "2.25rem", sm: "2.75rem", md: "3rem" },
+                                    whiteSpace: "normal",
+                                    lineHeight: 1.1,
+                                    textAlign: { xs: "center", md: "left" },
+                                }}
+                            >
                                 Fernanda Diniz
-                        </Typography>
-                        <Typography variant="h2" align={"center"} sx={{ whiteSpace: "nowrap" }}>
+                            </Typography>
+                            <Typography
+                                variant="h2"
+                                sx={{
+                                    fontSize: { xs: "1.4rem", sm: "1.6rem", md: "1.8rem" },
+                                    marginTop: { xs: "0.35rem", md: "0.5rem" },
+                                    textAlign: { xs: "center", md: "left" },
+                                    fontWeight: 400,
+                                }}
+                            >
                                 Desenvolvedora Web
-                        </Typography>
+                            </Typography>
 
-                        <Grid container display={"center"}>
-                            <Grid size={{xs: 12, md: 4}} display={"flex"} justifyContent={"center"}>
-                                <Button><DownloadIcon />Download CV</Button>
-                            </Grid>
-                        </Grid>
-                        <Grid container display={"center"}>
-                            <Grid size={{xs: 12, md: 4}} display={"flex"} justifyContent={"center"}>
-                                <Button><MailOutlineIcon/>Fale Comigo</Button>
-                            </Grid>
-                        </Grid>
+                            <ButtonRow
+                                direction={{ xs: "column", sm: "row" }}
+                                justifyContent={{ xs: "center", md: "flex-start" }}
+                            >
+                                <Button
+                                    variant="contained"
+                                    size="large"
+                                    startIcon={<DownloadIcon />}
+                                    fullWidth={isSmallScreen}
+                                >
+                                    Download CV
+                                </Button>
+                                <Button
+                                    variant="outlined"
+                                    color="secondary"
+                                    size="large"
+                                    startIcon={<MailOutlineIcon />}
+                                    fullWidth={isSmallScreen}
+                                >
+                                    Fale comigo
+                                </Button>
+                            </ButtonRow>
                         </StyledText>
-
                     </Grid>
-                    </Grid>
-                </Container>
-
-            </StyledContent>
+                </Grid>
+            </Container>
         </StyledHero>
     )
-    
 }
 
 export default Hero
