@@ -76,6 +76,7 @@ function Hero() {
                     pointerEvents: "none",
                     overflow: "hidden",
                     zIndex: 0,
+                    
                 }}
             >
                 <AnimatedBackground />

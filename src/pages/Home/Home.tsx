@@ -1,4 +1,5 @@
 import Hero from './sections/Hero/Hero'
+import AboutSection from './sections/About/About'
 import NavBar from '../../components/NavBar/NavBar'
 
 
@@ -8,6 +9,7 @@ function Home() {
     <>
       <NavBar />
         <Hero />
+        <AboutSection />
     </>
   )
 }
