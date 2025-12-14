@@ -1,5 +1,4 @@
 import { Box, Card, Container, Divider, Typography } from "@mui/material"
-import Grid from "@mui/material/Grid"
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium"
 import SchoolIcon from "@mui/icons-material/School"
 import { alpha, useTheme } from "@mui/material/styles"
@@ -40,84 +39,106 @@ export default function AboutSection({
     },
   }
 
+  const aboutTextBoxSx = {
+    mx: "auto",
+    maxWidth: 980,
+    background: alpha(theme.palette.common.white, 0.02),
+    border: `1px solid ${alpha(theme.palette.common.white, 0.08)}`,
+    borderRadius: 18,
+    px: { xs: 2.5, md: 4 },
+    py: { xs: 2.5, md: 3.5 },
+    transition: "transform 180ms ease, background 180ms ease, border-color 180ms ease",
+    willChange: "transform",
+    cursor: "default",
+    "&:hover": {
+      transform: "translateY(-4px)",
+      background: alpha(theme.palette.common.white, 0.03),
+      borderColor: alpha(theme.palette.common.white, 0.14),
+    },
+  } as const
+
   return (
-    <Box component="section" sx={{ py: { xs: 8, md: 12 } }}>
-      <Container maxWidth="lg">
-        <Box
+    <Box
+      component="section"
+      sx={{
+        position: "relative",
+        py: { xs: 8, md: 12 },
+        backgroundColor: "#212121",
+        overflow: "hidden",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          left: 0,
+          right: 0,
+          top: 0,
+          height: { xs: 160, md: 220 },
+          background: `
+            linear-gradient(
+              to bottom,
+              rgba(0, 0, 0, 0.95) 0%,
+              rgba(0, 0, 0, 0.85) 12%,
+              rgba(0, 0, 0, 0.72) 24%,
+              rgba(0, 0, 0, 0.58) 36%,
+              rgba(0, 0, 0, 0.44) 48%,
+              rgba(0, 0, 0, 0.30) 60%,
+              rgba(0, 0, 0, 0.18) 72%,
+              rgba(0, 0, 0, 0.08) 84%,
+              rgba(0, 0, 0, 0) 100%
+            )
+          `,
+          filter: "blur(16px)",
+          transform: "translateY(-40px)",
+          pointerEvents: "none",
+          zIndex: 0,
+        },
+      }}
+    >
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+        <Typography
+          variant="h2"
           sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 1.25,
+            fontWeight: 700,
+            letterSpacing: "-0.02em",
+            fontSize: { xs: 36, sm: 42, md: 48 },
+            lineHeight: 1.1,
+            textAlign: "center",
             mb: { xs: 5, md: 6 },
           }}
         >
-
-
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 700,
-              letterSpacing: "-0.02em",
-              fontSize: { xs: 44, sm: 56, md: 72 },
-              lineHeight: 1.05,
-              textAlign: "center",
-            }}
-          >
-            {title}
-          </Typography>
-        </Box>
-
-        <Grid
-          container
-          spacing={2.5}
-          sx={{
-            alignItems: "stretch",
-            justifyContent: "center",
-            mb: { xs: 4, md: 5 },
-          }}
-        >
-          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-            <Card variant="outlined" sx={cardSx}>
-              <WorkspacePremiumIcon />
-              <Typography sx={{ fontWeight: 700 }}>
-                Atuação
-              </Typography>
-              <Typography sx={{ opacity: 0.88 }}>
-                Requisitos, Sistemas e UX
-              </Typography>
-            </Card>
-          </Grid>
-
-          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-            <Card variant="outlined" sx={cardSx}>
-              <SchoolIcon />
-              <Typography sx={{ fontWeight: 700 }}>
-                Formação
-              </Typography>
-              <Typography sx={{ opacity: 0.88 }}>
-                Sistemas de Informação 7/10
-              </Typography>
-            </Card>
-          </Grid>
-        </Grid>
+          {title}
+        </Typography>
 
         <Box
           sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
+            gap: 2.5,
+            alignItems: "stretch",
+            mb: { xs: 4, md: 5 },
+            maxWidth: 820,
             mx: "auto",
-            maxWidth: 980,
-            background: alpha(theme.palette.common.white, 0.02),
-            border: `1px solid ${alpha(theme.palette.common.white, 0.08)}`,
-            borderRadius: 18,
-            px: { xs: 2.5, md: 4 },
-            py: { xs: 2.5, md: 3.5 },
           }}
         >
+          <Card variant="outlined" sx={cardSx}>
+            <WorkspacePremiumIcon />
+            <Typography sx={{ fontWeight: 700 }}>Atuação</Typography>
+            <Typography sx={{ opacity: 0.88 }}>Requisitos, Sistemas e UX</Typography>
+          </Card>
+
+          <Card variant="outlined" sx={cardSx}>
+            <SchoolIcon />
+            <Typography sx={{ fontWeight: 700 }}>Formação</Typography>
+            <Typography sx={{ opacity: 0.88 }}>Sistemas de Informação 7/10</Typography>
+          </Card>
+        </Box>
+
+        <Box sx={aboutTextBoxSx}>
           <Typography
             sx={{
-              opacity: 0.92,
+              opacity: 0.88,
               lineHeight: 1.85,
               fontSize: { xs: 16, md: 18 },
+              transition: "opacity 180ms ease",
             }}
           >
             {text}

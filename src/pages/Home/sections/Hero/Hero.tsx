@@ -119,7 +119,7 @@ function Hero() {
                                         fontWeight: 400,
                                     }}
                                 >
-                                    Desenvolvedora Web
+                                    Analista de Sistemas
                                 </Typography>
 
                                 <ButtonRow
