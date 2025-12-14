@@ -10,11 +10,12 @@ let theme = createTheme({
       contrastText: '#fff',
     },
     secondary: {
-      main: '#d42222ff',
+      main: '#cc1515ff',
+      contrastText: '#fff',
     },
     background: {
-      default: '#000000',
-      paper: '#111111',
+      default: '#222222',
+      paper: '#222222',
     },
     text: {
       primary: '#ffffff',
@@ -24,7 +25,13 @@ let theme = createTheme({
 
   typography: {
     fontFamily: "Helvetica Neue, Arial, sans-serif",
-  },   
+    h1: {
+        color: '#ffffffff',
+  }, 
+    h2: {
+        color: '#ffffff',
+  }, 
+},
      
   components: {
     MuiButton: {
@@ -35,9 +42,15 @@ let theme = createTheme({
           paddingInline: 24,
           paddingBlock: 12,
         },
+        containedPrimary: ({ theme }) => ({
+          color: theme.palette.primary.contrastText,
+        }),
+        containedSecondary: ({ theme }) => ({
+          color: theme.palette.secondary.contrastText ?? theme.palette.primary.contrastText,
+        }),
       },
     },
-  },
+  }
 })
 
 theme = responsiveFontSizes(theme); //Deixar a fonte responsiva em diferentes dispositivos
