@@ -31,7 +31,7 @@ export default function AboutSection({
     "&:hover": {
       transform: "translateY(-4px)",
       background: alpha(theme.palette.common.white, 0.05),
-      borderColor: alpha(theme.palette.common.white, 0.18),
+      borderColor: alpha(theme.palette.primary.main, 0.35),
     },
     "& svg": {
       fontSize: 28,
@@ -54,7 +54,7 @@ export default function AboutSection({
     "&:hover": {
       transform: "translateY(-4px)",
       background: alpha(theme.palette.common.white, 0.03),
-      borderColor: alpha(theme.palette.common.white, 0.14),
+      borderColor: alpha(theme.palette.primary.main, 0.35),
     },
   } as const
 
@@ -64,7 +64,7 @@ export default function AboutSection({
     "React",
     "Git",
     "HTML",
-    "CSS",
+    "Python",
     "Figma",
     "Testes exploratórios",
     "Análise de requisitos",
@@ -217,7 +217,7 @@ export default function AboutSection({
                     "&:hover": {
                       transform: "translateY(-4px)",
                       background: alpha(theme.palette.common.white, 0.05),
-                      borderColor: alpha(theme.palette.common.white, 0.18),
+                      borderColor: alpha(theme.palette.primary.main, 0.35),
                     },
                   }}
                 >
