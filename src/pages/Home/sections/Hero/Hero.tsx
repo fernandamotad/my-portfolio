@@ -110,10 +110,13 @@ function Hero() {
                                 justifyContent={{ xs: "center", md: "flex-start" }}
                             >
                                 <Button
+                                    component="a"
                                     variant="contained"
                                     size="large"
                                     startIcon={<DownloadIcon />}
                                     fullWidth={isSmallScreen}
+                                    href="/cv/CV-Fernanda-Diniz.pdf"
+                                    download
                                 >
                                     Download CV
                                 </Button>
@@ -123,6 +126,10 @@ function Hero() {
                                     size="large"
                                     startIcon={<MailOutlineIcon />}
                                     fullWidth={isSmallScreen}
+                                    component="a"
+                                    href="https://wa.me/5579996541410"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     Fale comigo
                                 </Button>
