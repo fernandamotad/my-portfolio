@@ -1,4 +1,5 @@
 import { Box, Card, Container, Divider, Typography } from "@mui/material"
+import Grid from "@mui/material/Grid"
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium"
 import SchoolIcon from "@mui/icons-material/School"
 import { alpha, useTheme } from "@mui/material/styles"
@@ -57,6 +58,21 @@ export default function AboutSection({
     },
   } as const
 
+  const skillsSet = [
+    "Javascript",
+    "Typescript",
+    "React",
+    "Next",
+    "Git",
+    "HTML",
+    "CSS",
+    "Cypress",
+    "AWS",
+    "GCP",
+    "Material UI",
+    "Figma",
+  ]
+
   return (
     <Box
       component="section"
@@ -107,6 +123,16 @@ export default function AboutSection({
         >
           {title}
         </Typography>
+        <Box
+          sx={{
+            width: 68,
+            height: 4,
+            borderRadius: 999,
+            backgroundColor: theme.palette.primary.main,
+            mx: "auto",
+            mb: { xs: 4, md: 5 },
+          }}
+        />
 
         <Box
           sx={{
@@ -114,7 +140,7 @@ export default function AboutSection({
             gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
             gap: 2.5,
             alignItems: "stretch",
-            mb: { xs: 4, md: 5 },
+            mb: { xs: 3, md: 4 },
             maxWidth: 820,
             mx: "auto",
           }}
@@ -143,6 +169,59 @@ export default function AboutSection({
           >
             {text}
           </Typography>
+        </Box>
+
+        <Box sx={{ mt: { xs: 5, md: 6 } }}>
+          <Typography
+            variant="h3"
+            sx={{
+              fontWeight: 700,
+              letterSpacing: "-0.01em",
+              fontSize: { xs: 28, sm: 32, md: 36 },
+              textAlign: "center",
+              mb: { xs: 3, md: 4 },
+            }}
+          >
+            Habilidades
+          </Typography>
+          <Box
+            sx={{
+              width: 52,
+              height: 3,
+              borderRadius: 999,
+              backgroundColor: theme.palette.primary.main,
+              mx: "auto",
+              mb: { xs: 3, md: 4 },
+            }}
+          />
+
+          <Grid container spacing={2.5} justifyContent="center">
+            {skillsSet.map((skill) => (
+              <Grid key={skill} size={{ xs: 6, sm: 4, md: 2, lg: 2 }}>
+                <Card
+                  variant="outlined"
+                  sx={{
+                    background: alpha(theme.palette.common.white, 0.03),
+                    border: `1px solid ${alpha(theme.palette.common.white, 0.1)}`,
+                    borderRadius: 12,
+                    textAlign: "center",
+                    py: { xs: 1.5, md: 2 },
+                    px: { xs: 1, md: 1.5 },
+                    fontWeight: 600,
+                    letterSpacing: "-0.01em",
+                    transition: "transform 180ms ease, background 180ms ease, border-color 180ms ease",
+                    "&:hover": {
+                      transform: "translateY(-4px)",
+                      background: alpha(theme.palette.common.white, 0.05),
+                      borderColor: alpha(theme.palette.common.white, 0.18),
+                    },
+                  }}
+                >
+                  {skill}
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </Box>
 
         <Divider sx={{ mt: { xs: 6, md: 7 }, opacity: 0.12 }} />
