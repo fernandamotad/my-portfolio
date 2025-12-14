@@ -62,15 +62,15 @@ export default function AboutSection({
     "Javascript",
     "Typescript",
     "React",
-    "Next",
     "Git",
     "HTML",
     "CSS",
-    "Cypress",
-    "AWS",
-    "GCP",
-    "Material UI",
     "Figma",
+    "Testes exploratórios",
+    "Análise de requisitos",
+    "Modelagem de processos",
+    "Scrum",
+    "Experiência do usuário"
   ]
 
   return (
@@ -197,7 +197,7 @@ export default function AboutSection({
 
           <Grid container spacing={2.5} justifyContent="center">
             {skillsSet.map((skill) => (
-              <Grid key={skill} size={{ xs: 6, sm: 4, md: 2, lg: 2 }}>
+              <Grid key={skill} size={{ xs: 6, sm: 4, md: 3, lg: 2 }}>
                 <Card
                   variant="outlined"
                   sx={{
@@ -205,6 +205,10 @@ export default function AboutSection({
                     border: `1px solid ${alpha(theme.palette.common.white, 0.1)}`,
                     borderRadius: 12,
                     textAlign: "center",
+                    height: 72,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                     py: { xs: 1.5, md: 2 },
                     px: { xs: 1, md: 1.5 },
                     fontWeight: 600,
