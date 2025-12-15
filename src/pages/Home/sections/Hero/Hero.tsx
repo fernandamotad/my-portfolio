@@ -9,8 +9,9 @@ import DownloadIcon from "@mui/icons-material/Download"
 import { AnimatedBackground } from "../../../../components/AnimatedBackground"
 
 function Hero() {
-  const theme = useTheme()
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"))
+    const theme = useTheme()
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"))
+    const baseUrl = import.meta.env.BASE_URL
 
   // Wrapper principal do herói
   const StyledHero = styled("div")({
@@ -131,16 +132,16 @@ function Hero() {
                                     justifyContent={{ xs: "center", md: "flex-start" }}
                                 >
                                     <Button
-                                        component="a"
-                                        variant="contained"
-                                        size="large"
-                                        startIcon={<DownloadIcon />}
-                                        fullWidth={isSmallScreen}
-                                        href="/cv/CV-Fernanda-Diniz.pdf"
-                                        download
-                                    >
-                                        Download CV
-                                    </Button>
+                                    component="a"
+                                    variant="contained"
+                                    size="large"
+                                    startIcon={<DownloadIcon />}
+                                    fullWidth={isSmallScreen}
+                                    href={`${baseUrl}cv/CV-Fernanda-Diniz.pdf`}
+                                    download
+                                >
+                                    Download CV
+                                </Button>
                                 <Button
                                     variant="outlined"
                                     color="secondary"
@@ -151,8 +152,8 @@ function Hero() {
                                                 width: 18,
                                                 height: 18,
                                                 backgroundColor: "currentColor",
-                                                mask: "url(/cv/whatsapp-logo-variant-svgrepo-com.svg) no-repeat center / contain",
-                                                WebkitMask: "url(/cv/whatsapp-logo-variant-svgrepo-com.svg) no-repeat center / contain",
+                                                mask: `url(${baseUrl}cv/whatsapp-logo-variant-svgrepo-com.svg) no-repeat center / contain`,
+                                                WebkitMask: `url(${baseUrl}cv/whatsapp-logo-variant-svgrepo-com.svg) no-repeat center / contain`,
                                             }}
                                             aria-hidden
                                         />
