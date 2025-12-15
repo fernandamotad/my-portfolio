@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# Portfólio — Fernanda Diniz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page/portfólio pessoal desenvolvida em React + Vite com Material UI e Emotion. Inclui seções de apresentação, sobre, habilidades e projetos, com navegação suave e animação de fundo.
 
-Currently, two official plugins are available:
+## Tecnologias
+- React + Vite
+- TypeScript
+- Material UI (MUI)
+- Emotion (estilização)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Como rodar
+```bash
+# instalar dependências
+npm install
 
-## React Compiler
+# ambiente de desenvolvimento
+npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# build para produção
+npm run build
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# pré-visualizar o build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Estrutura (src/)
+- `components/`
+  - `NavBar/` — navegação fixa com destaque da seção ativa.
+  - `AnimatedBackground/` — animação de fundo usada no herói.
+- `pages/Home/`
+  - `sections/Hero/` — capa com avatar, título e CTAs.
+  - `sections/About/` — texto sobre, cards de atuação/formação.
+  - `sections/Skills/` — grid responsiva de habilidades (6 colunas no desktop).
+  - `sections/Projects/` — cards de projetos com links.
+- `theme.ts` — tema MUI (cores, tipografia, overrides).
+- `main.tsx` / `App.tsx` — bootstrap da aplicação.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Scripts úteis
+- `npm run lint` (se configurado) para checagens estáticas.
+- `npm run dev` para desenvolvimento local.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Convenções de código
+- Estilização com MUI + Emotion (`sx` e `styled`).
+- Componentes funcionais com TypeScript.
+- IDs de seção: `#top`, `#about`, `#skills`, `#projects` (usados pelo NavBar).
+
+## Acessibilidade e UX
+- Navegação com scroll suave e foco visível no menu.
+- Botões com `aria-label` implícito e ícones com `aria-hidden` quando decorativos.
+- Layout responsivo (breakpoints MUI).
+
+## Deploy
+1. `npm run build`
+2. Servir a pasta `dist` (Vite) no host de sua escolha.
+
+---
+© {year} Fernanda Diniz. Todos os direitos reservados.
