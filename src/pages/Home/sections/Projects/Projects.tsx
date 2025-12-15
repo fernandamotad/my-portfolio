@@ -116,7 +116,14 @@ export default function ProjectsSection() {
                   alt={project.title}
                   sx={{ height: 200, objectFit: "cover" }}
                 />
-                <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                <CardContent
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 1,
+                    flexGrow: 1,
+                  }}
+                >
                   <Typography variant="h5" sx={{ fontWeight: 700 }}>
                     {project.title}
                   </Typography>
@@ -127,7 +134,13 @@ export default function ProjectsSection() {
                   <Typography sx={{ opacity: 0.8, fontWeight: 600 }}>
                     {project.technologies}
                   </Typography>
-                  <Stack direction="row" spacing={1.5} sx={{ mt: 1.5 }}>
+                  <Stack
+                    direction="row"
+                    spacing={1.5}
+                    sx={{ mt: "auto", pt: 1.5 }}
+                    justifyContent="center"
+                    alignItems="center"
+                  >
                     <Button
                       variant="contained"
                       color="primary"
