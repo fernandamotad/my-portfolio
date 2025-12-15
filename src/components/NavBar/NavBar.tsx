@@ -11,6 +11,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu"
 import { alpha, useTheme } from "@mui/material/styles"
 
+// Mapa de itens do menu com texto, hash e id de destino
 const navItems = [
   { label: "Início", href: "#top", id: "top" },
   { label: "Sobre", href: "#about", id: "about" },
@@ -26,6 +27,7 @@ function NavBar() {
   const [scrolled, setScrolled] = useState(false)
   const open = Boolean(anchorEl)
 
+  // Ajusta estilo de fundo quando a página rola
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
     onScroll()
@@ -33,7 +35,7 @@ function NavBar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  // Atualiza a seção ativa ao rolar a página
+  // Atualiza a seção ativa ao rolar a página (topo e fim de cada bloco)
   useEffect(() => {
     const handleScroll = () => {
       const navOffset = 110
@@ -85,6 +87,7 @@ function NavBar() {
     return base
   }, [theme, scrolled])
 
+  // Scroll suave ao clicar e já marca o item como ativo
   const handleNav = (href: string) => (e: React.MouseEvent) => {
     e.preventDefault()
     setAnchorEl(null)

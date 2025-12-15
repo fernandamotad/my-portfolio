@@ -14,6 +14,7 @@ export default function AboutSection({
 }: AboutSectionProps) {
   const theme = useTheme()
 
+  // Estilo base dos cards de atuação e formação
   const cardSx = {
     background: alpha(theme.palette.common.white, 0.03),
     border: `1px solid ${alpha(theme.palette.common.white, 0.1)}`,
@@ -39,6 +40,7 @@ export default function AboutSection({
     },
   }
 
+  // Caixa do texto principal com leve destaque e hover
   const aboutTextBoxSx = {
     mx: "auto",
     maxWidth: 980,
@@ -66,6 +68,7 @@ export default function AboutSection({
         py: { xs: 8, md: 12 },
         backgroundColor: "#212121",
         overflow: "hidden",
+        // Gradiente sutil no topo para transição com o herói
         "&::before": {
           content: '""',
           position: "absolute",
