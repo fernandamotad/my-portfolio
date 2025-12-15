@@ -1,73 +1,117 @@
-# React + TypeScript + Vite
+# Portfólio | Fernanda Diniz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio pessoal desenvolvido com React, TypeScript e Vite.  
+O projeto apresenta minha atuação profissional, habilidades técnicas e projetos, com foco em UI moderna, boa experiência do usuário e código organizado.
 
-Currently, two official plugins are available:
+## Visão geral
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Aplicação frontend construída como landing page, com navegação suave entre seções, layout responsivo e identidade visual consistente. O projeto também serve como base de estudo e evolução contínua em React, UI e boas práticas.
 
-## React Compiler
+## Tecnologias principais
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* TypeScript
+* Vite
+* Material UI
+* Emotion
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* Seção Hero com apresentação e CTAs
+* Seção Sobre com transição suave e cards informativos
+* Seção Habilidades em grid responsivo
+* Seção Projetos com cards e ações fixas
+* Navegação com scroll suave
+* Layout responsivo com breakpoints do MUI
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Estrutura do projeto
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```text
+src/
+├── components/
+│   ├── NavBar/                Navegação fixa com destaque da seção ativa
+│   ├── AnimatedBackground/    Animação de fundo do Hero
+│
+├── pages/
+│   └── Home/
+│       ├── sections/
+│       │   ├── Hero/           Capa com avatar, título e botões
+│       │   ├── About/          Texto profissional e cards
+│       │   ├── Skills/         Grid de habilidades
+│       │   └── Projects/       Cards de projetos
+│
+├── theme.ts                   Tema global do Material UI
+├── App.tsx                    Estrutura principal da aplicação
+└── main.tsx                   Bootstrap do React
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+## Como rodar
+```bash
+# instalar dependências
+npm install
+
+# ambiente de desenvolvimento
+npm run dev
+
+# build para produção
+npm run build
+
+# pré-visualizar o build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Estrutura (src/)
+- `components/`
+  - `NavBar/` — navegação fixa com destaque da seção ativa.
+  - `AnimatedBackground/` — animação de fundo usada no herói.
+- `pages/Home/`
+  - `sections/Hero/` — capa com avatar, título e CTAs.
+  - `sections/About/` — texto sobre, cards de atuação/formação.
+  - `sections/Skills/` — grid responsiva de habilidades (6 colunas no desktop).
+  - `sections/Projects/` — cards de projetos com links.
+- `theme.ts` — tema MUI (cores, tipografia, overrides).
+- `main.tsx` / `App.tsx` — bootstrap da aplicação.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Scripts úteis
+- `npm run lint` (se configurado) para checagens estáticas.
+- `npm run dev` para desenvolvimento local.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Convenções adotadas
+
+- Componentes funcionais com TypeScript  
+- Estilização usando Material UI (MUI) e Emotion  
+- Uso extensivo da prop `sx` para customização de estilos  
+- IDs de seção para navegação:
+  - `top`
+  - `about`
+  - `skills`
+  - `projects`
+
+## Acessibilidade e UX
+
+- Scroll suave entre seções  
+- Botões com foco visível  
+- Layout responsivo  
+- Ações principais sempre posicionadas de forma consistente  
+
+## Deploy
+
+Após gerar o build, basta servir a pasta `dist` em qualquer serviço de hospedagem estática compatível com Vite.
+
+## Sobre o template Vite
+
+Este projeto utiliza o template **React + TypeScript** do Vite, com suporte a **HMR** e **ESLint**.
+
+### Plugins oficiais utilizados
+
+- `@vitejs/plugin-react` com Babel  
+- `@vitejs/plugin-react-swc` com SWC  
+
+A configuração de ESLint pode ser estendida para lint com reconhecimento de tipos utilizando  
+`tseslint.configs.recommendedTypeChecked` ou `tseslint.configs.strictTypeChecked`, conforme a necessidade do projeto.
+
+## Licença
+
+Projeto de uso pessoal e educacional.
+
+© 2025 Fernanda Diniz
