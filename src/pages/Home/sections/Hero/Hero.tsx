@@ -9,14 +9,15 @@ import DownloadIcon from "@mui/icons-material/Download"
 import { AnimatedBackground } from "../../../../components/AnimatedBackground"
 
 function Hero() {
-    const theme = useTheme()
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"))
+  const theme = useTheme()
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"))
 
-    const StyledHero = styled("div")({
-        backgroundColor: "black",
-        position: "relative",
-        minHeight: "100vh",
-        display: "flex",
+  // Wrapper principal do herói
+  const StyledHero = styled("div")({
+    backgroundColor: "black",
+    position: "relative",
+    minHeight: "100vh",
+    display: "flex",
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
@@ -24,48 +25,52 @@ function Hero() {
         padding: "96px 20px 64px",
         [theme.breakpoints.down("md")]: {
             minHeight: "auto",
-            padding: "104px 16px 56px",
-        },
-    })
+      padding: "104px 16px 56px",
+    },
+  })
 
-    const StyledImage = styled("img")({
-        width: "100%",
-        maxWidth: "280px",
-        display: "block",
-        margin: "0 auto",
+  // Avatar circular
+  const StyledImage = styled("img")({
+    width: "100%",
+    maxWidth: "280px",
+    display: "block",
+    margin: "0 auto",
         borderRadius: "50%",
         border: `1px solid ${theme.palette.primary.contrastText}`,
         boxShadow: "0 10px 30px rgba(0, 0, 0, 0.35)",
         [theme.breakpoints.down("md")]: {
-            maxWidth: "220px",
-        },
-    })
+      maxWidth: "220px",
+    },
+  })
 
-    const StyledText = styled("div")({
-        color: "white",
-        textAlign: "left",
-        padding: "0 1rem",
-        width: "100%",
+  // Bloco de textos/títulos
+  const StyledText = styled("div")({
+    color: "white",
+    textAlign: "left",
+    padding: "0 1rem",
+    width: "100%",
         maxWidth: "800px",
         [theme.breakpoints.down("md")]: {
             textAlign: "center",
             padding: "0",
             marginTop: "1.5rem",
-            marginInline: "auto",
-        },
-    })
+      marginInline: "auto",
+    },
+  })
 
-    const ButtonRow = styled(Stack)({
-        marginTop: "28px",
-        gap: "16px",
-        alignItems: "flex-start",
-        [theme.breakpoints.down("md")]: {
+  // Linha de botões (CV e contato)
+  const ButtonRow = styled(Stack)({
+    marginTop: "28px",
+    gap: "16px",
+    alignItems: "flex-start",
+    [theme.breakpoints.down("md")]: {
             alignItems: "stretch",
         },
     })
 
     return (
         <StyledHero id="top">
+            {/* Camada de animação de fundo */}
             <Box position={"relative"}
                 sx={{
                     width: "50%", 

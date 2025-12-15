@@ -11,6 +11,7 @@ type Project = {
   codeURL: string
 }
 
+// Lista de projetos exibidos
 const projects: Project[] = [
   {
     title: "Benchmark Processos vs. Threads",
@@ -57,6 +58,7 @@ const projects: Project[] = [
 export default function ProjectsSection() {
   const theme = useTheme()
 
+  // Estilo base dos cards de projeto
   const cardSx = {
     background: alpha(theme.palette.common.white, 0.03),
     border: `1px solid ${alpha(theme.palette.common.white, 0.1)}`,

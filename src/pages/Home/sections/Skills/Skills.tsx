@@ -1,6 +1,7 @@
 import { Box, Card, Container, Typography } from "@mui/material"
 import { alpha, useTheme } from "@mui/material/styles"
 
+// Lista de habilidades exibidas em grid
 const skillsSet = [
   "Javascript",
   "Typescript",
@@ -26,6 +27,7 @@ export default function SkillsSection() {
       sx={{
         position: "relative",
         py: { xs: 5, md: 7 },
+        pb: { xs: 12, md: 18 },
         backgroundColor: "#212121",
       }}
     >
@@ -55,6 +57,7 @@ export default function SkillsSection() {
 
         <Box
           sx={{
+            // Grid responsivo para manter 6 colunas no desktop
             display: "grid",
             gridTemplateColumns: {
               xs: "repeat(2, minmax(120px, 1fr))",
@@ -70,6 +73,7 @@ export default function SkillsSection() {
               key={skill}
               variant="outlined"
               sx={{
+                // Botões em formato de chip com hover leve
                 width: "100%",
                 minHeight: 72,
                 background: alpha(theme.palette.common.white, 0.03),
