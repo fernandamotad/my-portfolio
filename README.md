@@ -110,6 +110,11 @@ Este projeto utiliza o template **React + TypeScript** do Vite, com suporte a **
 A configuração de ESLint pode ser estendida para lint com reconhecimento de tipos utilizando  
 `tseslint.configs.recommendedTypeChecked` ou `tseslint.configs.strictTypeChecked`, conforme a necessidade do projeto.
 
+## Demo
+
+Acesse o portfólio publicado em:
+https://fernandamotad.github.io/my-portfolio/
+
 ## Licença
 
 Projeto de uso pessoal e educacional.
