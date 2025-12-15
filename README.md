@@ -1,12 +1,49 @@
-# Portfólio — Fernanda Diniz
+# Portfólio | Fernanda Diniz
 
-Landing page/portfólio pessoal desenvolvida em React + Vite com Material UI e Emotion. Inclui seções de apresentação, sobre, habilidades e projetos, com navegação suave e animação de fundo.
+Portfólio pessoal desenvolvido com React, TypeScript e Vite.  
+O projeto apresenta minha atuação profissional, habilidades técnicas e projetos, com foco em UI moderna, boa experiência do usuário e código organizado.
 
-## Tecnologias
-- React + Vite
-- TypeScript
-- Material UI (MUI)
-- Emotion (estilização)
+## Visão geral
+
+Aplicação frontend construída como landing page, com navegação suave entre seções, layout responsivo e identidade visual consistente. O projeto também serve como base de estudo e evolução contínua em React, UI e boas práticas.
+
+## Tecnologias principais
+
+* React
+* TypeScript
+* Vite
+* Material UI
+* Emotion
+
+## Funcionalidades
+
+* Seção Hero com apresentação e CTAs
+* Seção Sobre com transição suave e cards informativos
+* Seção Habilidades em grid responsivo
+* Seção Projetos com cards e ações fixas
+* Navegação com scroll suave
+* Layout responsivo com breakpoints do MUI
+
+## Estrutura do projeto
+
+```text
+src/
+├── components/
+│   ├── NavBar/                Navegação fixa com destaque da seção ativa
+│   ├── AnimatedBackground/    Animação de fundo do Hero
+│
+├── pages/
+│   └── Home/
+│       ├── sections/
+│       │   ├── Hero/           Capa com avatar, título e botões
+│       │   ├── About/          Texto profissional e cards
+│       │   ├── Skills/         Grid de habilidades
+│       │   └── Projects/       Cards de projetos
+│
+├── theme.ts                   Tema global do Material UI
+├── App.tsx                    Estrutura principal da aplicação
+└── main.tsx                   Bootstrap do React
+
 
 ## Como rodar
 ```bash
@@ -39,19 +76,42 @@ npm run preview
 - `npm run lint` (se configurado) para checagens estáticas.
 - `npm run dev` para desenvolvimento local.
 
-## Convenções de código
-- Estilização com MUI + Emotion (`sx` e `styled`).
-- Componentes funcionais com TypeScript.
-- IDs de seção: `#top`, `#about`, `#skills`, `#projects` (usados pelo NavBar).
+## Convenções adotadas
+
+- Componentes funcionais com TypeScript  
+- Estilização usando Material UI (MUI) e Emotion  
+- Uso extensivo da prop `sx` para customização de estilos  
+- IDs de seção para navegação:
+  - `top`
+  - `about`
+  - `skills`
+  - `projects`
 
 ## Acessibilidade e UX
-- Navegação com scroll suave e foco visível no menu.
-- Botões com `aria-label` implícito e ícones com `aria-hidden` quando decorativos.
-- Layout responsivo (breakpoints MUI).
+
+- Scroll suave entre seções  
+- Botões com foco visível  
+- Layout responsivo  
+- Ações principais sempre posicionadas de forma consistente  
 
 ## Deploy
-1. `npm run build`
-2. Servir a pasta `dist` (Vite) no host de sua escolha.
 
----
-© {year} Fernanda Diniz. Todos os direitos reservados.
+Após gerar o build, basta servir a pasta `dist` em qualquer serviço de hospedagem estática compatível com Vite.
+
+## Sobre o template Vite
+
+Este projeto utiliza o template **React + TypeScript** do Vite, com suporte a **HMR** e **ESLint**.
+
+### Plugins oficiais utilizados
+
+- `@vitejs/plugin-react` com Babel  
+- `@vitejs/plugin-react-swc` com SWC  
+
+A configuração de ESLint pode ser estendida para lint com reconhecimento de tipos utilizando  
+`tseslint.configs.recommendedTypeChecked` ou `tseslint.configs.strictTypeChecked`, conforme a necessidade do projeto.
+
+## Licença
+
+Projeto de uso pessoal e educacional.
+
+© 2025 Fernanda Diniz
