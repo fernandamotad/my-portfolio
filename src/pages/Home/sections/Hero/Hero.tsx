@@ -65,7 +65,7 @@ function Hero() {
     })
 
     return (
-        <StyledHero>
+        <StyledHero id="top">
             <Box position={"relative"}
                 sx={{
                     width: "50%", 

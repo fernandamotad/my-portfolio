@@ -13,44 +13,44 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Project Exemple",
-    subtitle: "Jul 2023 - Dez 2023",
-    srcImg: "/src/assets/images/project-trello.png",
+    title: "Benchmark Processos vs. Threads",
+    subtitle: "Dez 2025",
+    srcImg: "/cv/projeto1.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta semper velit vel rutrum. Aliquam vulputate, nisi eget tristique mattis, nisi sem faucibus eros, a auctor felis sem ut mauris.",
-    technologies: "Technologies: JavaScript, HTML, CSS, Canvas Graphics",
-    websiteURL: "https://trello.com/",
-    codeURL: "https://github.com/",
+      "Projeto acadêmico que analisa o desempenho de paralelismo em C, com implementações sequenciais, multithread e multiprocessos para contagem de frequência em 100 milhões de números. Realizado em Linux (WSL2) usando o benchmark Hyperfine, comparando tempo de execução, variabilidade e recursos.",
+    technologies: "Tecnologias: C, PThreads, Processos, Memória Compartilhada, Hyperfine, Linux",
+    websiteURL: "https://github.com/fernandamotad/process-vs-thread-benchmark/blob/main/README.md",
+    codeURL: "https://github.com/fernandamotad/process-vs-thread-benchmark",
   },
   {
-    title: "Project Exemple",
-    subtitle: "Jul 2023 - Dez 2023",
-    srcImg: "/src/assets/images/project-financas.png",
+    title: "API Leads BD",
+    subtitle: "Set 2024",
+    srcImg: "/cv/projeto2.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta semper velit vel rutrum. Aliquam vulputate, nisi eget tristique mattis, nisi sem faucibus eros, a auctor felis sem ut mauris.",
-    technologies: "Technologies: JavaScript, HTML, CSS, Canvas Graphics",
-    websiteURL: "https://trello.com/",
-    codeURL: "https://github.com/",
+      "API desenvolvida em Python para gerenciamento eficiente de leads. O sistema realiza operações CRUD completas, validação de dados via Pandas e interage com bancos relacionais (MySQL/PostgreSQL) utilizando ORM SQLAlchemy para persistência segura.",
+    technologies: "Tecnologias: Python, Pandas, SQLAlchemy, MySQL/PostgreSQL",
+    websiteURL: "https://github.com/fernandamotad/api-leads-bd/blob/main/readme",
+    codeURL: "https://github.com/fernandamotad/api-leads-bd",
   },
   {
-    title: "Project Craze Maze",
-    subtitle: "Jul 2019 - May 2019",
-    srcImg: "/src/assets/images/project1-craze-maze.gif",
+    title: "Imobiliária Online",
+    subtitle: "Out 2023",
+    srcImg: "/cv/projeto3.png",
     description:
-      "Game to escape the maze, but not only that. An algorithm has been created that randomly generates a new maze each time the game is started.",
-    technologies: "Technologies: JavaScript, HTML, CSS, Canvas Graphics",
-    websiteURL: "https://adrianasaty.github.io/ironhack-project1-craze-maze/index.html",
-    codeURL: "https://github.com/AdrianaSaty/ironhack-project1-craze-maze",
+      "Plataforma web para gestão e divulgação de imóveis. O sistema facilita a conexão entre proprietários e inquilinos, permitindo o cadastro detalhado de propriedades, busca avançada por filtros e gerenciamento eficiente de clientes e contratos.",
+    technologies: "Tecnologias: Python, Flask, SQLAlchemy, HTML5, CSS3, Bootstrap",
+    websiteURL: "https://github.com/fernandamotad/imobiliaria-online/blob/main/README.md",
+    codeURL: "https://github.com/fernandamotad/imobiliaria-online",
   },
   {
-    title: "Project Blotting",
-    subtitle: "Jul 2019 - May 2019",
-    srcImg: "/src/assets/images/project2-blotting.png",
+    title: "Automação de Testes em Python",
+    subtitle: "Set 2025",
+    srcImg: "/cv/projeto4.png",
     description:
-      "Game to escape the maze, but not only that. An algorithm has been created that randomly generates a new maze each time the game is started.",
-    technologies: "Technologies: JavaScript, HTML, CSS, Canvas Graphics",
-    websiteURL: "https://adrianasaty.github.io/ironhack-project1-craze-maze/index.html",
-    codeURL: "https://github.com/AdrianaSaty/ironhack-project1-craze-maze",
+      "Projeto educacional que implementa Testes Unitários, TDD, Cobertura de Código e Testes de Mutação, aplicados ao utilitário Unix cal e a uma calculadora, com foco em garantir a robustez do software.",
+    technologies: "Tecnologias: Python, Pytest, Mutmut, TDD",
+    websiteURL: "https://github.com/fernandamotad/Teste_Software_3_2025_gessica_santos_leticia_cavalcanti_maria_diniz_pedro_santos_wenderson_silva/tree/master",
+    codeURL: "https://github.com/fernandamotad/Teste_Software_3_2025_gessica_santos_leticia_cavalcanti_maria_diniz_pedro_santos_wenderson_silva",
   },
 ]
 
@@ -93,7 +93,7 @@ export default function ProjectsSection() {
             mb: { xs: 3, md: 4 },
           }}
         >
-          Projects
+          Projetos
         </Typography>
         <Box
           sx={{
@@ -116,7 +116,14 @@ export default function ProjectsSection() {
                   alt={project.title}
                   sx={{ height: 200, objectFit: "cover" }}
                 />
-                <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                <CardContent
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 1,
+                    flexGrow: 1,
+                  }}
+                >
                   <Typography variant="h5" sx={{ fontWeight: 700 }}>
                     {project.title}
                   </Typography>
@@ -127,7 +134,13 @@ export default function ProjectsSection() {
                   <Typography sx={{ opacity: 0.8, fontWeight: 600 }}>
                     {project.technologies}
                   </Typography>
-                  <Stack direction="row" spacing={1.5} sx={{ mt: 1.5 }}>
+                  <Stack
+                    direction="row"
+                    spacing={1.5}
+                    sx={{ mt: "auto", pt: 1.5 }}
+                    justifyContent="center"
+                    alignItems="center"
+                  >
                     <Button
                       variant="contained"
                       color="primary"
@@ -135,7 +148,7 @@ export default function ProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Demo
+                      Sobre
                     </Button>
                     <Button
                       variant="outlined"
