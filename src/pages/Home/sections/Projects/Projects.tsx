@@ -16,7 +16,7 @@ const projects: Project[] = [
   {
     title: "Benchmark Processos vs. Threads",
     subtitle: "Dez 2025",
-    srcImg: "/cv/projeto1.png",
+    srcImg: `${import.meta.env.BASE_URL}cv/projeto1.png`,
     description:
       "Projeto acadêmico que analisa o desempenho de paralelismo em C, com implementações sequenciais, multithread e multiprocessos para contagem de frequência em 100 milhões de números. Realizado em Linux (WSL2) usando o benchmark Hyperfine, comparando tempo de execução, variabilidade e recursos.",
     technologies: "Tecnologias: C, PThreads, Processos, Memória Compartilhada, Hyperfine, Linux",
@@ -26,7 +26,7 @@ const projects: Project[] = [
   {
     title: "API Leads BD",
     subtitle: "Set 2024",
-    srcImg: "/cv/projeto2.png",
+    srcImg: `${import.meta.env.BASE_URL}cv/projeto2.png`,
     description:
       "API desenvolvida em Python para gerenciamento eficiente de leads. O sistema realiza operações CRUD completas, validação de dados via Pandas e interage com bancos relacionais (MySQL/PostgreSQL) utilizando ORM SQLAlchemy para persistência segura.",
     technologies: "Tecnologias: Python, Pandas, SQLAlchemy, MySQL/PostgreSQL",
@@ -36,7 +36,7 @@ const projects: Project[] = [
   {
     title: "Imobiliária Online",
     subtitle: "Out 2023",
-    srcImg: "/cv/projeto3.png",
+    srcImg: `${import.meta.env.BASE_URL}cv/projeto3.png`,
     description:
       "Plataforma web para gestão e divulgação de imóveis. O sistema facilita a conexão entre proprietários e inquilinos, permitindo o cadastro detalhado de propriedades, busca avançada por filtros e gerenciamento eficiente de clientes e contratos.",
     technologies: "Tecnologias: Python, Flask, SQLAlchemy, HTML5, CSS3, Bootstrap",
@@ -46,7 +46,7 @@ const projects: Project[] = [
   {
     title: "Automação de Testes em Python",
     subtitle: "Set 2025",
-    srcImg: "/cv/projeto4.png",
+    srcImg: `${import.meta.env.BASE_URL}cv/projeto4.png`,
     description:
       "Projeto educacional que implementa Testes Unitários, TDD, Cobertura de Código e Testes de Mutação, aplicados ao utilitário Unix cal e a uma calculadora, com foco em garantir a robustez do software.",
     technologies: "Tecnologias: Python, Pytest, Mutmut, TDD",
